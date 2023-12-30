@@ -1,0 +1,23 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "This is Kaushik's react app",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saikaushik25/React.git"
+  },
+  "keywords": [],
+  "author": "kaushik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saikaushik25/React/issues"
+  },
+  "homepage": "https://github.com/saikaushik25/React#readme",
+  "devDependencies": {
+    "parcel": "^2.10.3"
+  }
+}
