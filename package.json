@@ -2,7 +2,6 @@
   "name": "react",
   "version": "1.0.0",
   "description": "This is Kaushik's react app",
-  "main": "app.js",
   "scripts": {
     "test": "jest"
   },
@@ -18,6 +17,14 @@
   },
   "homepage": "https://github.com/saikaushik25/React#readme",
   "devDependencies": {
-    "parcel": "^2.10.3"
-  }
+    "parcel": "^2.10.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browserslist": [
+    "Last 10 versions"
+  ]
 }
