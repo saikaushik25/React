@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import ReactDOM  from "react-dom/client";
 import charger from "../../React/applecharger.jpg";
 import Body from "./components/Body";
@@ -8,7 +8,8 @@ import Contact from "./components/Contact";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Error from "./components/error";
 import Menu from "./components/Menu";
-import Cart from "./components/Cart";
+//import Cart from "./components/Cart";
+
 //JSX is converted to React.createElement by Babel, which is then converted (React Element) to JS object.
 //render converts it to HTML element
 
@@ -109,7 +110,7 @@ React.createElement("h2", {}, "This is my React")])]);
     - Cards
      - Name, Rating
 */
-
+const Cart = lazy(()=> import("./components/cart"));
 
 const Applayout = () => {
     return(
@@ -138,7 +139,7 @@ const approuter = createBrowserRouter([
       },
       {
         path: "/cart",
-        element: <Cart />,
+        element: <Suspense><Cart /></Suspense>,
       },
       {
         path: "/restaurants/:resId",

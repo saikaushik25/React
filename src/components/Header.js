@@ -2,9 +2,11 @@ import { useState } from "react";
 import apple from "../../../React/apple.gif";
 import icon from "../../../React/favico.jpg";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Header = () => {
     const [user, setUser] = useState("Login");
+    const onlineStatus = useOnlineStatus();
     return(
     <div className="header">
         <div className="logo-container">
@@ -15,6 +17,7 @@ const Header = () => {
         </div>
         <div className="list-container">
             <ul>
+                <li>Online Status: {onlineStatus ? "🟢": "🔴" }</li>
                 <li>
                     <Link to="/">Home</Link>
                 </li>

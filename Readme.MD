@@ -20,3 +20,16 @@
 - content hashing
 - content splitting
 - Differential Bundling - supporting for old broswers automatically
+
+# Chunking
+- Process of splitting components into bundles and we need to import them as lazy and wrap them with Suspense element, otherwisw the component/s fail to render
+- Other Names:
+ - Code Splitting
+ - Dynamic Loading
+ - Lazy Loading
+ - on demand loading
+ - dynamic import
+- Advantages:
+ - Faster loading
+ - Reduced size of initial page
+ - Loads components only when require
