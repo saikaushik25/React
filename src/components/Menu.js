@@ -26,11 +26,11 @@ const Menu = () => {
       const {itemCards} = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card
       return (
         <div>
-        <h1>{name}</h1>
-        <h3>{cuisines.join(", ")}</h3>
-        <h2>Menu</h2>
+        <h1 className="font-bold py-3 bg-yellow-200">{name}</h1>
+        <h3 className="bg-blue-100 p-2">{cuisines.join(", ")}</h3>
+        <h2 className="font-bold bg-red-100 p-2">Menu</h2>
         <ul>
-            {itemCards.map((item) => <li key={item.card.info.id}>{item.card.info.name} - {item.card.info.price}</li> )}
+            {itemCards && itemCards.map((item) => <li className="bg-green-200 border-b-2" key={item.card.info.id}>{item.card.info.name} - {item.card.info.price}</li> )}
         </ul>
         </div>
       

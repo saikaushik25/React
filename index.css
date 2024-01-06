@@ -1,4 +1,10 @@
-body{
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+/* body{
     background-color: #552e2e;
 }
 .header {
@@ -60,4 +66,4 @@ body{
     padding: 5px;
     background-color: #f0f0f0;
     margin: 5px;
-}
+} */

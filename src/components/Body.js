@@ -21,14 +21,14 @@ const Body = () => {
   
         
         return listOfRes.length === 0 ? (<Shimmer />):(
-        <div className="body">
-            <div className="search">
-                <input type="text" placeholder="search here ..." value={searchItem} onChange={(e)=>{
+        <div className="">
+            <div className="m-5">
+                <input type="text" className="border-green-200 border-solid border-2 m-2 w-auto" placeholder="search here ..." value={searchItem} onChange={(e)=>{
                   setSearchItem(e.target.value);
                  
                 }}/>
                 
-                <button className="check" onClick={
+                <button className="rounded-lg bg-green-200 m-2 p-1" onClick={
                     ()=>{
                         
                         const f = listOfRes.filter((z) => {
@@ -48,7 +48,7 @@ const Body = () => {
                 
             </div>
             <div className="filter">
-                <button className="filtered" onClick={() => {
+                <button className="rounded-lg bg-green-200 m-2 p-1" onClick={() => {
                    const filtered = listOfRes.filter((x) => x.info.avgRating > 4.5);
                    setListOfRes(filtered);
                 }}>
@@ -57,7 +57,7 @@ const Body = () => {
             </div>
 
 
-            <div className="cards">
+            <div className="flex flex-wrap">
              {
             
             listOfRes.map((res) =>
