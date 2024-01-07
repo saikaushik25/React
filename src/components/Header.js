@@ -25,7 +25,7 @@ const Header = () => {
                 <li className="p-3 mt-12"><Link to="/contact">Contact</Link></li>
                 <li className="p-3 mt-12"><Link to="/cart">Cart</Link></li>
                 <button className="p-5" onClick={() => {
-                  return user === "Login" ? setUser(<img id="ico" src={icon} alt="fav.ico"></img>) : setUser("Login")
+                  return user === "Login" ? setUser(<img src={icon} alt="fav.ico"></img>) : setUser("Login")
                 }}>{user}</button>
             </ul>
         </div>

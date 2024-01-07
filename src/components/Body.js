@@ -2,12 +2,14 @@ import Cards from "./Cards";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import { withPromoted } from "./Cards";
 
 const Body = () => {
     //const [listOfRes, setListOfRes] = useState(resObj);
     const [listOfRes, setListOfRes] = useState([]);
     //const [up, setUp] = useState([]);
     const [searchItem, setSearchItem] = useState("");
+    const promotedRes = withPromoted(Cards);
     
     useEffect(() => {
         test1();
@@ -17,9 +19,10 @@ const Body = () => {
       const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
       const data1 =  await data.json();
       setListOfRes(data1?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+      console.log(data1?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle);
     }
   
-        
+
         return listOfRes.length === 0 ? (<Shimmer />):(
         <div className="">
             <div className="m-5">
@@ -62,7 +65,11 @@ const Body = () => {
             
             listOfRes.map((res) =>
              <Link key={res.info.id} to={"/restaurants/" + res.info.id}>
-             <Cards {...res}/>
+
+                    {console.log(res)}
+                    {res?.info?.loyaltyDiscoverPresentationInfo?.badgeType ? (<promotedRes {...res} />) : (<Cards {...res}/>)}
+                
+             
             </Link>) 
              
              }

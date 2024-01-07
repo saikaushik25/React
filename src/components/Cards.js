@@ -12,4 +12,17 @@ const Cards = (props) => {
     );
 };
 
+export const withPromoted = (props) => {
+    return(props) => {
+        return(
+            <div>
+                <label>BADGE_TYPE_ONE_LITE</label>
+                <Cards {...props}/>
+            </div>
+            
+        )
+    }
+    
+}
+
 export default Cards;
